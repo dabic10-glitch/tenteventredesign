@@ -87,6 +87,24 @@ hr, .border-slate-200 { border-color: rgba(138,106,42,0.27) !important; }
 
 div
 div
+
+/* Mobile header fix */
+#header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 40 !important;
+  background-color: #170f0a !important;
+}
+@media (max-width: 767px) {
+  #header {
+    position: sticky !important;
+    top: 0 !important;
+    background-color: #170f0a !important;
+  }
+  [data-aw-toggle-menu] {
+    display: flex !important;
+  }
+}
 </style></head><body class="antialiased bg-page text-default tracking-tight"><div class="text-muted dark:text-slate-400 bg-black dark dark:bg-transparent dark:border-b dark:border-slate-800 gap-1 flex overflow-hidden px-3 py-2 relative text-ellipsis text-sm whitespace-nowrap justify-center"><span class="text-muted dark:text-slate-400 font-medium">📞 0604195911 &nbsp;·&nbsp; Dostupni 7 dana u nedelji &nbsp;·&nbsp; Beograd i okolina</span></div><header class="w-full mx-auto border-b border-gray-50/0 ease-in-out flex-none sticky top-0 transition-[opacity] z-40" data-aw-sticky-header="true" id="header"><div class="absolute inset-0"></div><div class="relative mx-auto md:px-6 text-default max-w-7xl md:grid md:grid-cols-3 md:items-center px-3 py-3 w-full"><div class="flex justify-between"><a class="flex items-center" href="/"><span style="display:flex;align-items:center;gap:12px;"><svg width="220" height="72" viewBox="0 0 270 72" fill="none" xmlns="http://www.w3.org/2000/svg">
   <polyline points="10,44 52,26 94,44" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linejoin="round"/>
   <line x1="2" y1="48" x2="102" y2="48" stroke="#c9a84c" stroke-width="1.6"/>
