@@ -62,6 +62,68 @@ footer { background-color: #120c07 !important; border-top: 1px solid rgba(138,10
 .dark\:border-slate-600, .dark\:border-slate-800, .dark\:border-gray-700 { border-color: rgba(138,106,42,0.27) !important; }
 blockquote p, .dark\:text-slate-400 { color: #b0a080 !important; }
 hr, .border-slate-200 { border-color: rgba(138,106,42,0.27) !important; }
+
+/* Scroll animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+
+
+
+/* Hover efekti na karticama */
+[class*="backdrop-blur"] {
+  transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out, border-color 0.6s ease-in-out !important;
+  will-change: transform !important;
+}
+[class*="backdrop-blur"]:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(201,168,76,0.45) !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35) !important;
+}
+
+/* Pulse na WhatsApp dugmadu */
+@keyframes pulse-gold {
+  0% { box-shadow: 0 0 0 0 rgba(201,168,76,0.5); }
+  70% { box-shadow: 0 0 0 10px rgba(201,168,76,0); }
+  100% { box-shadow: 0 0 0 0 rgba(201,168,76,0); }
+}
+.btn-primary {
+  animation: pulse-gold 2s infinite !important;
+}
+.btn-primary:hover {
+  animation: none !important;
+}
+
+/* Galerija hover */
+#galerija img {
+  transition: transform 0.4s ease !important;
+}
+#galerija div:hover img {
+  transform: scale(1.05) !important;
+}
+
+
+.hover-card {
+  transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out, border-color 0.6s ease-in-out !important;
+  will-change: transform !important;
+}
+.hover-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(201,168,76,0.45) !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35) !important;
+}
 </style></head><body class="antialiased bg-page text-default tracking-tight"><div class="text-muted dark:text-slate-400 bg-black dark dark:bg-transparent dark:border-b dark:border-slate-800 gap-1 flex overflow-hidden px-3 py-2 relative text-ellipsis text-sm whitespace-nowrap justify-center"><span class="text-muted dark:text-slate-400 font-medium">📞 0604195911 &nbsp;·&nbsp; Dostupni 7 dana u nedelji &nbsp;·&nbsp; Beograd i okolina</span></div><header class="mx-auto w-full border-b border-gray-50/0 ease-in-out flex-none sticky top-0 transition-[opacity] z-40" data-aw-sticky-header="true" id="header"><div class="absolute inset-0"></div><div class="mx-auto relative md:px-6 text-default max-w-7xl md:grid md:grid-cols-3 md:items-center px-3 py-3 w-full"><div class="flex justify-between"><a class="flex items-center" href="/"><span style="display:flex;align-items:center;gap:12px;"><svg width="220" height="72" viewBox="0 0 270 72" fill="none" xmlns="http://www.w3.org/2000/svg">
   <polyline points="10,44 52,26 94,44" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linejoin="round"/>
   <line x1="2" y1="48" x2="102" y2="48" stroke="#c9a84c" stroke-width="1.6"/>
@@ -148,5 +210,48 @@ hr, .border-slate-200 { border-color: rgba(138,106,42,0.27) !important; }
       btn.style.display='none';
     }
   });
+</script>
+<script>
+// Scroll reveal
+function revealOnScroll() {
+  var els = document.querySelectorAll('.reveal');
+  els.forEach(function(el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 60) {
+      el.classList.add('visible');
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+</script>
+
+(function() {
+  function initHover() {
+    document.querySelectorAll('.hover-card').forEach(function(card) {
+      card.style.setProperty('transition-property', 'transform, box-shadow, border-color, opacity', 'important');
+      card.style.setProperty('transition-duration', '0.6s', 'important');
+      card.style.setProperty('transition-timing-function', 'ease-in-out', 'important');
+
+      card.addEventListener('mouseenter', function() {
+        this.style.setProperty('transform', 'translateY(-6px)', 'important');
+        this.style.setProperty('box-shadow', '0 20px 50px rgba(0,0,0,0.35)', 'important');
+        this.style.setProperty('border-color', 'rgba(201,168,76,0.45)', 'important');
+      });
+      card.addEventListener('mouseleave', function() {
+        this.style.setProperty('transform', 'translateY(0)', 'important');
+        this.style.removeProperty('box-shadow');
+        this.style.removeProperty('border-color');
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHover);
+  } else {
+    initHover();
+  }
+})();
 </script>
 </body></html>
