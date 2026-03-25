@@ -139,18 +139,21 @@ hr, .border-slate-200 { border-color: rgba(138,106,42,0.27) !important; }
 }
 @media (max-width: 767px) {
   #header {
-    position: fixed !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     z-index: 100 !important;
     background-color: #170f0a !important;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
   [data-aw-toggle-menu] {
     display: flex !important;
   }
   body {
-    padding-top: 60px;
+    padding-top: 0;
   }
 }
 </style><script type="application/ld+json">
@@ -305,6 +308,17 @@ footer a:hover {
   color: #c9a84c !important;
 }
 </style>
+<style>
+@media (max-width: 767px) {
+  .services-section-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .services-section-grid > div:last-child {
+    display: none !important;
+  }
+}
+</style>
 </head><body class="antialiased bg-page text-default tracking-tight"><div class="text-muted dark:text-slate-400 bg-black dark dark:bg-transparent dark:border-b dark:border-slate-800 gap-1 flex overflow-hidden px-3 py-2 relative text-ellipsis text-sm whitespace-nowrap justify-center"><span class="text-muted dark:text-slate-400 font-medium">📞 0604195911 &nbsp;·&nbsp; Dostupni 7 dana u nedelji &nbsp;·&nbsp; Beograd i okolina</span></div><header class="w-full mx-auto border-b border-gray-50/0 ease-in-out flex-none sticky top-0 transition-[opacity] z-40" data-aw-sticky-header="true" id="header"><div class="absolute inset-0"></div><div class="relative mx-auto md:px-6 text-default max-w-7xl md:grid md:grid-cols-3 md:items-center px-3 py-3 w-full"><div class="flex justify-between"><a class="flex items-center" href="/"><span style="display:flex;align-items:center;gap:12px;"><svg width="220" height="72" viewBox="0 0 270 72" fill="none" xmlns="http://www.w3.org/2000/svg">
   <polyline points="10,44 52,26 94,44" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linejoin="round"/>
   <line x1="2" y1="48" x2="102" y2="48" stroke="#c9a84c" stroke-width="1.6"/>
@@ -346,7 +360,7 @@ footer a:hover {
       <div style="width:40px;height:1px;background:rgba(201,168,76,0.4);"></div>
       <p class="reveal" style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#c9a84c;font-family:'DM Sans',sans-serif;">01</p>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+    <div class="services-section-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
       <div>
         <h2 class="reveal" style="font-family:'Libre Baskerville',Georgia,serif;font-size:2rem;color:#f5f0e8;font-weight:400;margin-bottom:16px;">Šatori i pagode</h2>
 <p class="reveal" style="font-family:'DM Sans',sans-serif;font-size:15px;color:#b0a080;line-height:1.9;margin-bottom:24px;">Naši šatori su idealni za proslave na otvorenom — pružaju zaštitu od sunca i kiše dok zadržavaju elegantnu atmosferu. Dostupni u više veličina za različit broj gostiju.</p>
@@ -387,7 +401,7 @@ footer a:hover {
       <div style="width:40px;height:1px;background:rgba(201,168,76,0.4);"></div>
       <p class="reveal" style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#c9a84c;font-family:'DM Sans',sans-serif;">02</p>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+    <div class="services-section-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
       <div style="overflow:hidden;border-radius:4px;aspect-ratio:4/3;order:1;">
         <img loading="lazy" src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80" alt="Stolovi i stolice" style="width:100%;height:100%;object-fit:cover;">
       </div>
@@ -423,7 +437,7 @@ footer a:hover {
       <div style="width:40px;height:1px;background:rgba(201,168,76,0.4);"></div>
       <p class="reveal" style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#c9a84c;font-family:'DM Sans',sans-serif;">03</p>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+    <div class="services-section-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
       <div>
         <h2 class="reveal" style="font-family:'Libre Baskerville',Georgia,serif;font-size:2rem;color:#f5f0e8;font-weight:400;margin-bottom:16px;">Dečija oprema</h2>
 <p class="reveal" style="font-family:'DM Sans',sans-serif;font-size:15px;color:#b0a080;line-height:1.9;margin-bottom:24px;">Za dečije proslave nudimo specijalne stolove i stolice prilagođene deci — dostupne u plavoj boji za dečake i roze boji za devojčice.</p>
@@ -453,7 +467,7 @@ footer a:hover {
       <div style="width:40px;height:1px;background:rgba(201,168,76,0.4);"></div>
       <p class="reveal" style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#c9a84c;font-family:'DM Sans',sans-serif;">04</p>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
+    <div class="services-section-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
       <div style="overflow:hidden;border-radius:4px;aspect-ratio:4/3;">
         <img loading="lazy" src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=800&q=80" alt="Osvetljenje i zvuk" style="width:100%;height:100%;object-fit:cover;">
       </div>
