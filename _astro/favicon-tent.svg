@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#1a0f07"/>
+  <!-- Krov - tacno kao u logu: polyline points 10,44 52,26 94,44 skaliran na 32x32 -->
+  <polyline points="2,20 16,10 30,20" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Horizontalna linija -->
+  <line x1="1" y1="22" x2="31" y2="22" stroke="#c9a84c" stroke-width="1.5"/>
+  <!-- 4 vertikalne linije dole - kao stubovi -->
+  <line x1="3" y1="22" x2="2.5" y2="30" stroke="#c9a84c" stroke-width="1.3"/>
+  <line x1="12" y1="22" x2="11.5" y2="30" stroke="#c9a84c" stroke-width="1.3"/>
+  <line x1="20" y1="22" x2="20.5" y2="30" stroke="#c9a84c" stroke-width="1.3"/>
+  <line x1="29" y1="22" x2="29.5" y2="30" stroke="#c9a84c" stroke-width="1.3"/>
+  <!-- Horizontalne linije između stubova (kao u logu) -->
+  <line x1="2.5" y1="26" x2="11.5" y2="26" stroke="#c9a84c" stroke-width="0.6" opacity="0.5"/>
+  <line x1="20.5" y1="26" x2="29.5" y2="26" stroke="#c9a84c" stroke-width="0.6" opacity="0.5"/>
+</svg>
