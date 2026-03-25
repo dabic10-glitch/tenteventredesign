@@ -187,16 +187,14 @@ div
     <h2 class="font-bold font-heading leading-tighter tracking-tighter text-heading mb-4 text-4xl md:text-5xl" style="color:#f5f0e8;">Pogledajte naše realizovane događaje</h2>
     <p style="color:#b0a080;font-size:1.1rem;margin-top:1rem;">Svaki događaj je jedinstven — evo kako pretvaramo vaše ideje u stvarnost širom Beograda i okoline.</p>
   </div>
-  <div style="position:relative;max-width:1100px;margin:0 auto;">
+  <!-- Strelice i viewport u flex redu da strelice budu PORED grida -->
+  <div style="display:flex;align-items:center;gap:16px;max-width:1180px;margin:0 auto;">
 
     <!-- Leva strelica -->
-    <button onclick="galScroll(-1)" style="position:absolute;left:-20px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(30,21,16,0.92);border:1px solid rgba(201,168,76,0.4);color:#c9a84c;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .2s;" onmouseover="this.style.background='rgba(201,168,76,0.15)'" onmouseout="this.style.background='rgba(30,21,16,0.92)'">&#8592;</button>
+    <button onclick="galScroll(-1)" style="flex-shrink:0;width:44px;height:44px;border-radius:50%;background:rgba(30,21,16,0.92);border:1px solid rgba(201,168,76,0.4);color:#c9a84c;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(201,168,76,0.2)'" onmouseout="this.style.background='rgba(30,21,16,0.92)'">&#8592;</button>
 
-    <!-- Desna strelica -->
-    <button onclick="galScroll(1)" style="position:absolute;right:-20px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(30,21,16,0.92);border:1px solid rgba(201,168,76,0.4);color:#c9a84c;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:background .2s;" onmouseover="this.style.background='rgba(201,168,76,0.15)'" onmouseout="this.style.background='rgba(30,21,16,0.92)'">&#8594;</button>
-
-    <!-- Scrollable grid — 2 reda, kolone se nastavljaju u desno -->
-    <div id="gal-viewport" style="overflow:hidden;">
+    <!-- Scrollable grid -->
+    <div id="gal-viewport" style="overflow:hidden;flex:1;">
       <div id="gal-track" style="display:grid;grid-template-rows:repeat(2,1fr);grid-auto-flow:column;grid-auto-columns:calc((100% - 24px) / 3);gap:12px;transition:transform 0.5s cubic-bezier(.4,0,.2,1);">
         <div style="overflow:hidden;border-radius:4px;aspect-ratio:1;"><img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80" alt="Šator za venčanje" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
         <div style="overflow:hidden;border-radius:4px;aspect-ratio:1;"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&q=80" alt="Dekorisani sto" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
@@ -210,30 +208,41 @@ div
         <div style="overflow:hidden;border-radius:4px;aspect-ratio:1;"><img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=600&q=80" alt="Žurka" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
       </div>
     </div>
+
+    <!-- Desna strelica -->
+    <button onclick="galScroll(1)" style="flex-shrink:0;width:44px;height:44px;border-radius:50%;background:rgba(30,21,16,0.92);border:1px solid rgba(201,168,76,0.4);color:#c9a84c;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;" onmouseover="this.style.background='rgba(201,168,76,0.2)'" onmouseout="this.style.background='rgba(30,21,16,0.92)'">&#8594;</button>
+
   </div>
 
   <script>
   (function(){
     var offset = 0;
-    var colW = 0;
-    var totalCols = 0;
     var visibleCols = 3;
 
-    function init(){
-      var track = document.getElementById('gal-track');
+    function getColW(){
       var vp = document.getElementById('gal-viewport');
-      colW = vp.offsetWidth / visibleCols;
-      totalCols = Math.ceil(track.children.length / 2);
+      return vp.offsetWidth / visibleCols;
+    }
+
+    function getTotalCols(){
+      var track = document.getElementById('gal-track');
+      return Math.ceil(track.children.length / 2);
+    }
+
+    function update(){
+      var track = document.getElementById('gal-track');
+      var colW = getColW();
+      track.style.transform = 'translateX(-' + (offset * (colW + 12)) + 'px)';
     }
 
     window.galScroll = function(dir){
-      var vp = document.getElementById('gal-viewport');
-      var track = document.getElementById('gal-track');
-      colW = vp.offsetWidth / visibleCols;
-      totalCols = Math.ceil(track.children.length / 2);
-      var maxOffset = totalCols - visibleCols;
-      offset = Math.max(0, Math.min(offset + dir, maxOffset));
-      track.style.transform = 'translateX(-' + (offset * colW + offset * 12) + 'px)';
+      var total = getTotalCols();
+      var max = total - visibleCols;
+      offset = offset + dir;
+      // Loop
+      if(offset > max) offset = 0;
+      if(offset < 0) offset = max;
+      update();
     };
 
     // Touch swipe
@@ -244,8 +253,6 @@ div
       var diff = startX - e.changedTouches[0].clientX;
       if(Math.abs(diff) > 50) galScroll(diff > 0 ? 1 : -1);
     }, {passive:true});
-
-    window.addEventListener('load', init);
   })();
   </script>
 </div>
