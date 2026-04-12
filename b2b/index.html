@@ -117,6 +117,12 @@ html:not(.dark) #header.expanded nav ul li a:hover{color:#96760f!important;backg
 
 /* Hero overlay - keep dark regardless of mode for readability on photo */
 .relative.not-prose.md\:-mt-\[76px\] img{filter:brightness(0.75)}
+
+/* Tablet nav fix */
+@media (min-width:768px) and (max-width:1024px) {
+  #header nav ul li a { padding: 8px 8px !important; font-size: 13px !important; }
+  #header svg[width="220"] { width: 160px !important; height: 52px !important; }
+}
 </style><script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -297,8 +303,8 @@ footer a:hover {
       <div style="width:44px;height:44px;margin:0 auto 12px;background:rgba(201,168,76,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
       </div>
-      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:13px;color:#f0e6d0;margin-bottom:5px;">R1 Račun i PDV</div>
-      <div style="font-size:11px;color:#8a7050;line-height:1.5;">Fiskalni i PDV računi za sve poslovne klijente</div>
+      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:13px;color:#f0e6d0;margin-bottom:5px;">Izdajemo račun</div>
+      <div style="font-size:11px;color:#8a7050;line-height:1.5;">Izdajemo fiskalni račun i fakturu za bezgotovinsko plaćanje</div>
     </div>
     <div style="background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:20px 14px;text-align:center;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,0.5)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.2)'">
       <div style="width:44px;height:44px;margin:0 auto 12px;background:rgba(201,168,76,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;">
@@ -318,8 +324,8 @@ footer a:hover {
       <div style="width:44px;height:44px;margin:0 auto 12px;background:rgba(201,168,76,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       </div>
-      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:13px;color:#f0e6d0;margin-bottom:5px;">PDV Obveznik</div>
-      <div style="font-size:11px;color:#8a7050;line-height:1.5;">Registrovani PDV obveznik — sve usluge sa PDV računom</div>
+      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:13px;color:#f0e6d0;margin-bottom:5px;">Bezgotovinsko plaćanje</div>
+      <div style="font-size:11px;color:#8a7050;line-height:1.5;">Prihvatamo plaćanje na račun — faktura se izdaje pre ili na dan događaja</div>
     </div>
     <div style="background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:20px 14px;text-align:center;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(201,168,76,0.5)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.2)'">
       <div style="width:44px;height:44px;margin:0 auto 12px;background:rgba(201,168,76,0.08);border-radius:50%;display:flex;align-items:center;justify-content:center;">
@@ -360,31 +366,76 @@ footer a:hover {
     </div>
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;">
-    <div style="text-align:center;padding:28px 20px;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:4px;">
-      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:2rem;color:#c9a84c;margin-bottom:8px;">R1</div>
-      <div style="font-family:'DM Sans',sans-serif;font-size:12px;color:#8a7050;letter-spacing:2px;text-transform:uppercase;">Račun i PDV</div>
-    </div>
-    <div style="text-align:center;padding:28px 20px;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:4px;">
-      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:2rem;color:#c9a84c;margin-bottom:8px;">📋</div>
-      <div style="font-family:'DM Sans',sans-serif;font-size:12px;color:#8a7050;letter-spacing:2px;text-transform:uppercase;">Ugovor</div>
-    </div>
-    <div style="text-align:center;padding:28px 20px;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.2);border-radius:4px;">
-      <div style="font-family:'Libre Baskerville',Georgia,serif;font-size:2rem;color:#c9a84c;margin-bottom:8px;">24h</div>
-      <div style="font-family:'DM Sans',sans-serif;font-size:12px;color:#8a7050;letter-spacing:2px;text-transform:uppercase;">Odgovor</div>
+  <div style="margin-top:64px;padding-top:48px;border-top:1px solid rgba(201,168,76,0.15);">
+    <h2 class="reveal" style="font-family:'Libre Baskerville',Georgia,serif;font-size:2rem;color:#f5f0e8;font-weight:400;margin-bottom:12px;">Zatražite ponudu za vašu firmu</h2>
+    <p class="reveal" style="font-family:'DM Sans',sans-serif;font-size:15px;color:#b0a080;line-height:1.9;margin-bottom:36px;">Popunite formu i odgovaramo u roku od 24 sata sa kompletnom ponudom i cenovnikom.</p>
+
+    <form action="https://formspree.io/f/xeerbeez" method="POST">
+      <input type="hidden" name="_subject" value="B2B upit sa Tent Event sajta!">
+      <input type="hidden" name="_next" value="https://tentevent.co/b2b">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <label style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7050;">Naziv firme</label>
+          <input type="text" name="company" placeholder="Firma d.o.o." required style="background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:2px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:#e8dcc8;outline:none;width:100%;">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <label style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7050;">Kontakt osoba</label>
+          <input type="text" name="name" placeholder="Ime i prezime" required style="background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:2px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:#e8dcc8;outline:none;width:100%;">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <label style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7050;">Email</label>
+          <input type="email" name="email" placeholder="firma@email.com" required style="background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:2px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:#e8dcc8;outline:none;width:100%;">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <label style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7050;">Telefon</label>
+          <input type="tel" name="phone" placeholder="+381 6x xxx xxxx" style="background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:2px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:#e8dcc8;outline:none;width:100%;">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <label style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7050;">Tip događaja</label>
+          <select name="event_type" style="background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:2px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:#e8dcc8;outline:none;width:100%;">
+            <option value="" disabled selected>Izaberite...</option>
+            <option>Team building</option>
+            <option>Konferencija</option>
+            <option>Poslovni prijem / koktel</option>
+            <option>Godišnjica firme</option>
+            <option>End-of-year žurka</option>
+            <option>Ostalo</option>
+          </select>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <label style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7050;">Broj gostiju</label>
+          <select name="guests" style="background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:2px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:#e8dcc8;outline:none;width:100%;">
+            <option value="" disabled selected>Izaberite...</option>
+            <option>Do 20</option>
+            <option>20 – 50</option>
+            <option>50 – 100</option>
+            <option>100 – 200</option>
+            <option>200+</option>
+          </select>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <label style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7050;">Okvirni datum</label>
+          <input type="date" name="date" style="background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:2px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:#e8dcc8;outline:none;width:100%;color-scheme:dark;">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <label style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7050;">Lokacija</label>
+          <input type="text" name="location" placeholder="Beograd, Novi Sad..." style="background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:2px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:#e8dcc8;outline:none;width:100%;">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;grid-column:1/-1;">
+          <label style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7050;">Napomena (opciono)</label>
+          <textarea name="message" placeholder="Posebni zahtevi, oprema koja vam treba..." rows="4" style="background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:2px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:#e8dcc8;outline:none;width:100%;resize:vertical;"></textarea>
+        </div>
+      </div>
+      <button type="submit" style="margin-top:20px;display:inline-block;background:#d4b97a;color:#1a0f05;padding:14px 40px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:2px;border:none;cursor:pointer;">Pošalji upit</button>
+    </form>
+
+    <div style="text-align:center;color:#4a3a28;font-size:13px;margin:28px 0 20px;letter-spacing:1px;">— ili nas kontaktirajte direktno —</div>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="mailto:info@tentevent.co" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,168,76,0.25);color:#c9a84c;padding:10px 20px;border-radius:2px;font-size:13px;text-decoration:none;font-family:'DM Sans',sans-serif;">✉ info@tentevent.co</a>
+      <a href="tel:+381604195911" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,168,76,0.25);color:#c9a84c;padding:10px 20px;border-radius:2px;font-size:13px;text-decoration:none;font-family:'DM Sans',sans-serif;">📞 060 419 5911</a>
     </div>
   </div>
 
-  <div style="padding:36px;background:rgba(201,168,76,0.06);border:1px solid rgba(201,168,76,0.25);border-radius:4px;text-align:center;">
-    <h2 class="reveal" style="font-family:'Libre Baskerville',Georgia,serif;font-size:22px;color:#e8dcc8;font-weight:400;margin-bottom:12px;text-align:center;">Zatražite ponudu za vašu firmu</h2>
-<p class="reveal" style="font-family:'DM Sans',sans-serif;font-size:15px;color:#b0a080;line-height:1.9;margin-bottom:24px;text-align:center;">Pošaljite nam imejl sa detaljima događaja i brojem gostiju — odgovaramo u roku od 24 sata sa kompletnom ponudom.</p>
-    <div style="text-align:center;">
-      <a href="mailto:info@tentevent.co" style="display:inline-block;background:#d4b97a;color:#1a0f05;padding:14px 36px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:2px;text-decoration:none;">info@tentevent.co</a>
-    </div>
-<p class="reveal" style="font-family:'DM Sans',sans-serif;font-size:15px;ccolor:#b0a080;line-height:1.9;margin-bottom:24px;text-align:center;">Ili pozovite: <a href="tel:+381604195911" style="color:#c9a84c;text-decoration:none;">0604195911</a></p>
-  </div>
-
-</div>
 </section></main><footer class="relative not-prose border-gray-200 border-t dark:border-slate-800"><div class="absolute inset-0 pointer-events-none dark:bg-dark" aria-hidden="true"></div><div class="intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter intersect-no-queue relative mx-auto px-4 max-w-7xl dark:text-slate-300 sm:px-6"><div class="grid gap-4 gap-y-8 grid-cols-12 md:py-12 py-8 sm:gap-8"><div class="col-span-12 lg:col-span-4"><div class="mb-2"><a class="font-bold text-xl inline-block" href="/"><svg width="220" height="72" viewBox="0 0 270 72" fill="none" xmlns="http://www.w3.org/2000/svg">
   <polyline points="10,44 52,26 94,44" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linejoin="round"/>
   <line x1="2" y1="48" x2="102" y2="48" stroke="#c9a84c" stroke-width="1.6"/>

@@ -117,6 +117,12 @@ html:not(.dark) #header.expanded nav ul li a:hover{color:#96760f!important;backg
 
 /* Hero overlay - keep dark regardless of mode for readability on photo */
 .relative.not-prose.md\:-mt-\[76px\] img{filter:brightness(0.75)}
+
+/* Tablet nav fix */
+@media (min-width:768px) and (max-width:1024px) {
+  #header nav ul li a { padding: 8px 8px !important; font-size: 13px !important; }
+  #header svg[width="220"] { width: 160px !important; height: 52px !important; }
+}
 </style><script type="application/ld+json">
 {
   "@context": "https://schema.org",

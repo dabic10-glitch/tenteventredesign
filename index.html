@@ -117,6 +117,12 @@ html:not(.dark) #header.expanded nav ul li a:hover{color:#96760f!important;backg
 
 /* Hero overlay - keep dark regardless of mode for readability on photo */
 .relative.not-prose.md\:-mt-\[76px\] img{filter:brightness(0.75)}
+
+/* Tablet nav fix */
+@media (min-width:768px) and (max-width:1024px) {
+  #header nav ul li a { padding: 8px 8px !important; font-size: 13px !important; }
+  #header svg[width="220"] { width: 160px !important; height: 52px !important; }
+}
 </style><script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -592,6 +598,16 @@ footer a:hover {
       </button>
       <div class="faq-answer" style="display:none;padding:0 28px 16px;">
         <p style="font-family:'DM Sans',sans-serif;font-size:13px;color:#8a7050;line-height:1.8;">Manje oštećenje rešavamo dogovorom. Za veća oštećenja naplaćujemo troškove popravke ili zamene. Depozit služi kao osiguranje u takvim situacijama.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" style="border-bottom:1px solid rgba(201,168,76,0.15);">
+      <button onclick="toggleFaq(this)" style="width:100%;text-align:left;padding:16px 28px;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;">
+        <span style="font-family:'DM Sans',sans-serif;font-size:15px;color:#e8dcc8;font-weight:500;">Da li iznajmljujete i tanjire i escajg?</span>
+        <span style="color:#c9a84c;font-size:18px;flex-shrink:0;transition:transform 0.3s;">+</span>
+      </button>
+      <div class="faq-answer" style="display:none;padding:0 28px 16px;">
+        <p style="font-family:'DM Sans',sans-serif;font-size:13px;color:#8a7050;line-height:1.8;">Da! Pored opreme za prostor, nudimo i tanjire i escajg po osobi. Sve što vam treba za savršen događaj možete dobiti na jednom mestu — javite nam se i dogovorićemo sve detalje.</p>
       </div>
     </div>
 
