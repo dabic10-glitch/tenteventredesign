@@ -123,6 +123,11 @@ html:not(.dark) #header.expanded nav ul li a:hover{color:#96760f!important;backg
   #header nav ul li a { padding: 8px 8px !important; font-size: 13px !important; }
   #header svg[width="220"] { width: 160px !important; height: 52px !important; }
 }
+
+/* B2B form mobile */
+@media (max-width:640px) {
+  .b2b-form-grid { grid-template-columns: 1fr !important; }
+}
 </style><script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -397,7 +402,7 @@ footer a:hover {
     <form action="https://formspree.io/f/xeerbeez" method="POST">
       <input type="hidden" name="_subject" value="B2B upit sa Tent Event sajta!">
       <input type="hidden" name="_next" value="https://tentevent.rs/b2b">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div class="b2b-form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
         <div style="display:flex;flex-direction:column;gap:6px;">
           <label style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7050;">Naziv firme</label>
           <input type="text" name="company" placeholder="Firma d.o.o." required style="background:#251912;border:1px solid rgba(201,168,76,0.2);border-radius:2px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:#e8dcc8;outline:none;width:100%;color-scheme:dark;">
