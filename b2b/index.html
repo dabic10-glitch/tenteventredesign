@@ -130,8 +130,10 @@ html:not(.dark) #header.expanded nav ul li a:hover{color:#96760f!important;backg
 }
 
 /* Date input mobile fix */
+input[type="date"] { width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; -webkit-appearance: none; appearance: none; }
 @media (max-width:640px) {
-  input[type="date"] { width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
+  .b2b-form-grid { overflow: hidden; }
+  input[type="date"] { padding: 12px 6px !important; font-size: 12px !important; }
 }
 </style><script type="application/ld+json">
 {
@@ -449,7 +451,7 @@ footer a:hover {
         </div>
         <div style="display:flex;flex-direction:column;gap:6px;">
           <label style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7050;">Okvirni datum</label>
-          <input type="date" name="date" style="background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:2px;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:14px;color:#e8dcc8;outline:none;width:100%;color-scheme:dark;box-sizing:border-box;max-width:100%;">
+          <input type="date" name="date" style="background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:2px;padding:12px 8px;font-family:'DM Sans',sans-serif;font-size:13px;color:#e8dcc8;outline:none;width:100%;color-scheme:dark;box-sizing:border-box;max-width:100%;-webkit-appearance:none;appearance:none;">
         </div>
         <div style="display:flex;flex-direction:column;gap:6px;">
           <label style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8a7050;">Lokacija</label>
